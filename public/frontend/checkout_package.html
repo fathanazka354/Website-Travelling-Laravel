@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- sass custom -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;700&family=Poppins:wght@100;300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+
+    </style>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./libraries/xZoom-master/src/xzoom.css">
+    <link rel="stylesheet" href="./libraries/gijgo-master/dist/combined/css/gijgo.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Detail Package</title>
+    <script src="https://kit.fontawesome.com/3e89cfe6ad.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container">
+        <nav class="navbar d-flex align-items-center justify-content-center navbar-expand-lg navbar-light bg-white">
+            <div class="row navbar-content ">
+                <div class="col-6 navbar-content-detail d-flex justify-content-center align-items-center">
+                    <a class="navbar-brand" href="#">
+                        <img src="./images/brand.png" width="130px" height="130px" alt="">
+                    </a>
+                </div>
+                <div class="col-6 navbar-content-detail border-left">
+                    <h2>Beyond the Explorer of The World</h2>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+
+    <main>
+        <!-- Header -->
+        <nav aria-label="breadcrumb" class="navb">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                </ol>
+            </div>
+        </nav>
+        <!-- content -->
+        <div class="container">
+            <section class="details-checkout-content">
+                <div class="row">
+                    <div class="col-md-8 col-12 checkout-left">
+                        <h2>Who's going?</h2>
+                        <p>Trip to Ubud, Bali</p>
+
+                        <table class="table table-responsive-sm">
+                            <tr>
+                                <th class="text-center">Pictures</th>
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Nationality</th>
+                                <th class="text-center">Visa</th>
+                                <th class="text-center">Passport</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <img src="./images/member/Mask Group 15@2x.jpg" alt="">
+                                </td>
+                                <td class="text-center align-middle">Fathan Azka</td>
+                                <td class="text-center align-middle">Indonesia</td>
+                                <td class="text-center align-middle">N/A</td>
+                                <td class="text-center align-middle">Active</td>
+                                <td class="text-center align-middle">
+                                    <a href="" class="btn">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <img src="./images/member/Mask Group 16@2x.jpg" alt="">
+                                </td>
+                                <td class="text-center align-middle">Ibnu Fajar</td>
+                                <td class="text-center align-middle">Indonesia</td>
+                                <td class="text-center align-middle">30 days</td>
+                                <td class="text-center align-middle">Active</td>
+                                <td class="text-center align-middle">
+                                    <a href="" class="btn">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <h3>Add Member</h3>
+                        <form action="" class="form-inline">
+                            <label for="inputUsername" class="sr-only">Username</label>
+                            <input type="text" name="inputUsername" id="inputUsername" placeholder="username"
+                                class="form-control mb-2 mr-sm-2">
+
+                            <label for="inputvisa" class="sr-only">VISA</label>
+                            <select name="inputVisa" id="inputVisa" class="custom-select mb-2 mr-sm-2">
+                                <option value="VISA">VISA</option>
+                                <option value="30 days">30 days</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+
+                            <label for="doePassport" class="sr-only">DOE Passport</label>
+                            <div class="input-group mb-2 mr-sm-2">
+                                <input type="text" class="form-control datepicker" id="doepassport"
+                                    placeholder="DOE passport">
+                            </div>
+
+                            <button type="submit" class="btn btn-add-now mb-2 px-4">
+                                Add now
+                            </button>
+                        </form>
+
+                        <div class="alert mt-2 alert-primary" style="height: auto; padding: 10px;" role="alert">
+                            <h3>Note : </h3>
+                            <p>You are onlyable to invite member that has registered in NusaTour</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <div class="card card-detail card-right">
+                            <h2>Checkout Information</h2>
+                            <table class="trip-informations">
+                                <tr>
+                                    <th width="50%">Members</th>
+                                    <td width="50%" class="text-right">
+                                        2 person
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="50%">Additional VISA</th>
+                                    <td width="50%" class="text-right">
+                                        $190,00
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="50%">Trip Price</th>
+                                    <td width="50%" class="text-right">
+                                        $80,00 / person
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="50%">Sub Total</th>
+                                    <td width="50%" class="text-right">
+                                        $280,00 / person
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="50%">Total (+Unique Code)</th>
+                                    <td width="50%" class="text-right">
+                                        <span class="blue">$280,</span><span class="orange">21</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <hr>
+                            <h2>Payments Instruction</h2>
+                            <p>Please complete your payment before you going to trip</p>
+                            <div class="card-payment">
+                                <img src="./images/logo bank@2x.jpg" alt="">
+                                <div class="text">
+                                    <h5>PT Nusa Tour</h5>
+                                    <p>Bank Central Java</p>
+                                    <p>0271-222-329</p>
+                                </div>
+                            </div>
+                            <div class="card-payment">
+                                <img src="./images/logo bank@2x.jpg" alt="">
+                                <div class="text">
+                                    <h5>PT Syariah Mandiri</h5>
+                                    <p>Bank Central Java</p>
+                                    <p>0271-233-329</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="join-container">
+                            <a href="" class="btn btn-block btn-join-now mt-3 py-2">
+                                Join Now
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    <!-- footer -->
+    <footer class="section-footer mt-5 mb-4 border-top">
+        <div class="container pt-5 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <h5>FEATURES</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="">Reviews</a></li>
+                        <li><a href="">Community</a></li>
+                        <li><a href="">Social Media Kit</a></li>
+                        <li><a href="">Affiliate</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>ACCOUNT</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="">Refund</a></li>
+                        <li><a href="">Security</a></li>
+                        <li><a href="">Rewards</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>COMPANY</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="">Career</a></li>
+                        <li><a href="">Help Center</a></li>
+                        <li><a href="">Media</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>GET CONNECTED</h5>
+                    <ul class="list-unstyled">
+                        <li>Sragen</li>
+                        <li>Indonesia</li>
+                        <li>0822-1111-3321</li>
+                        <li>AyoNomads@bussiness.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+
+    <!-- Retina -->
+
+    <script src="./libraries/xZoom-master/src/xzoom.js"></script>
+    <script src="./libraries/retina/retina.min.js"></script>
+    <script src="./libraries/gijgo-master/dist/combined/js/gijgo.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // alert("OK")
+            $('.xzoom, .xzoom-gallery').xzoom({
+                zoomWidth: 500,
+                title: false,
+                tint: '#333',
+                Xoffset: 15
+            })
+            $('.datepicker').datepicker({
+                uiLibrary: 'bootstrap4',
+                icons: {
+                    rightIcon: '<img src="./images/Calender Icon@2x.jpg" height="20px" />'
+                }
+            });
+        })
+
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+</body>
+
+</html>
