@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TravelPackageController;
+use App\Http\Controllers\Admin\GalleryController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -32,5 +33,6 @@ Route::prefix("admin")
             ->name("dashboard");
 
         Route::resource('travel-package', TravelPackageController::class);
+        Route::resource('gallery', GalleryController::class);
     });
 Auth::routes(['verify' => true]);
