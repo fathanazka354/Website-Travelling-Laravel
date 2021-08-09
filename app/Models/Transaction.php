@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\TravelPackage as ModelsTravelPackage;
-use App\Models\TransactionDetails as ModelsTransactionDetails;
+use App\Models\TransactionDetail;
 use App\Models\User as ModelsUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -19,14 +19,16 @@ class Transaction extends Model
     ];
 
     protected $hidden = [];
+    protected $table = 'transaction';
 
-    public function travel_package()
-    {
-        return $this->belongsTo(ModelsTravelPackage::class, 'transactions_id', 'id');
-    }
+
     public function details()
     {
-        return $this->hasMany(ModelsTransactionDetails::class, 'travel_packages_id', 'id');
+        return $this->hasMany(TransactionDetail::class, 'transactions_id', 'id');
+    }
+    public function travel_package()
+    {
+        return $this->belongsTo(ModelsTravelPackage::class, 'travel_packages_id', 'id');
     }
     public function user()
     {
