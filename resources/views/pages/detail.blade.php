@@ -16,60 +16,42 @@
     <div class="container">
         <section class="details-package-content">
             <div class="row">
+                @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <div class="col-md-8 col-12 detail-left">
-                    <h1>UBUD , BALI</h1>
-                    <p>Republic of Indonesia</p>
+                    <h1>{{$item->title}}</h1>
+                    <p>{{$item->location}}</p>
 
-                    <div class="gallery">
-                        <div class="xzoom-container">
-                            <img src="{{url('frontend/images/detail package/Mask Group 10@2x.jpg')}}" class="xzoom"
-                                id="xzoom-default"
-                                xoriginal="{{url('frontend/images/detail package/Mask Group 10@2x.jpg')}}" width="700px"
-                                alt="">
+                    @if($item->galleries->count())
+                        <div class="gallery">
+                            <div class="xzoom-container">
+                                <img src="{{Storage::url($item->galleries->first()->image)}}" class="xzoom"
+                                    id="xzoom-default"
+                                    xoriginal="{{Storage::url($item->galleries->first()->image)}}" width="700px"
+                                    alt="">
+                            </div>
+                            <div class="xzoom-thumbs">
+                                @foreach ($item->galleries as $gallery)
+                                <a href="{{Storage::url($item->galleries->first()->image)}}">
+                                    <img src="{{Storage::url($item->galleries->first()->image)}}"
+                                        class="xzoom-gallery" width="128"
+                                        xpreview="{{Storage::url($item->galleries->first()->image)}}">
+                                </a>
+                                @endforeach
+
+                            </div>
                         </div>
-                        <div class="xzoom-thumbs">
-                            <a href="{{url('frontend/images/detail package/Mask Group 10@2x.jpg')}}">
-                                <img src="{{url('frontend/images/detail package/Mask Group 10@2x.jpg')}}"
-                                    class="xzoom-gallery" width="128"
-                                    xpreview="{{url('frontend/images/detail package/Mask Group 10@2x.jpg')}}">
-                            </a>
-                            <a href="{{url('frontend/images/detail package/Mask Group 11@2x.jpg')}}">
-                                <img src="{{url('frontend/images/detail package/Mask Group 11@2x.jpg')}}"
-                                    class="xzoom-gallery" width="128"
-                                    xpreview="{{url('frontend/images/detail package/Mask Group 11@2x.jpg')}}">
-                            </a>
-                            <a href="{{url('frontend/images/detail package/Mask Group 12@2x.jpg')}}">
-                                <img src="{{url('frontend/images/detail package/Mask Group 12@2x.jpg')}}"
-                                    class="xzoom-gallery" width="128"
-                                    xpreview="{{url('frontend/images/detail package/Mask Group 12@2x.jpg')}}">
-                            </a>
-                            <a href="{{url('frontend/images/detail package/Mask Group 13@2x.jpg')}}">
-                                <img src="{{url('frontend/images/detail package/Mask Group 13@2x.jpg')}}"
-                                    class="xzoom-gallery" width="128"
-                                    xpreview="{{url('frontend/images/detail package/Mask Group 13@2x.jpg')}}">
-                            </a>
-                            <a href="{{url('frontend/images/detail package/Mask Group 14@2x.jpg')}}">
-                                <img src="{{url('frontend/images/detail package/Mask Group 14@2x.jpg')}}"
-                                    class="xzoom-gallery" width="128"
-                                    xpreview="{{url('frontend/images/detail package/Mask Group 14@2x.jpg')}}">
-                            </a>
+                    @endif
 
-
-                        </div>
-                    </div>
                     <h2>Tentang Wisata</h2>
-                    <p>Ubud is one of those places where a holiday of a few days can easily turn into a stay of
-                        weeks, months or even years. The size of the town's expat community attests to this, and so
-                        do the many novels and films that have been set here, creative responses to the seductive
-                        nature of this most cultured of all Balinese towns. </p>
-                    <p>This is a place where traditional Balinese culture imbues every waking moment, where
-                        colourful offerings adorn the streets and where the hypnotic strains of gamelan are an
-                        ever-present soundtrack to everyday life. It's also somewhere that is relentlessly on trend
-                        – a showcase of sustainable design, mindfulness, culinary inventiveness and the very best
-                        that global tourism has to offer. Come here for relaxation, for rejuvenation and to have
-                        what may well be the most magical holiday of your life.
-
-                        Select points of interest to plot on map by type</p>
+                    <p>{!! $item->about !!}</p>
 
 
                     <div class="features row">
@@ -77,21 +59,21 @@
                             <img src="{{url('frontend/images/logo tiket@2x.jpg')}}" alt="">
                             <div class="description">
                                 <h3>Featured Event</h3>
-                                <p>Tari Kecak</p>
+                                <p>{{$item->featured_event}}</p>
                             </div>
                         </div>
                         <div class="col-md-4 border-left">
                             <img src="{{url('frontend/images/logo language@2x.jpg')}}" alt="">
                             <div class="description">
                                 <h3>Language</h3>
-                                <p>Bahasa Indonesia</p>
+                                <p>{{$item->language}}</p>
                             </div>
                         </div>
                         <div class="col-md-4 border-left">
                             <img src="{{url('frontend/images/Logo FOod@2x.jpg')}}" alt="">
                             <div class="description">
                                 <h3>Foods</h3>
-                                <p>Local Foods</p>
+                                <p>{{$item->food}}</p>
                             </div>
                         </div>
                     </div>
@@ -117,33 +99,44 @@
                             <tr>
                                 <th width="50%">Date of Departure</th>
                                 <td width="50%" class="text-right">
-                                    30 July 2021
+                                    {{\Carbon\Carbon::create($item->date_of_departure)->format('F n, Y')}}
                                 </td>
                             </tr>
                             <tr>
                                 <th width="50%">Duration</th>
                                 <td width="50%" class="text-right">
-                                    2D 1N
+                                    {{$item->duration}}
                                 </td>
                             </tr>
                             <tr>
                                 <th width="50%">Type</th>
                                 <td width="50%" class="text-right">
-                                    Open Trip
+                                    {{$item->type}}
                                 </td>
                             </tr>
                             <tr>
                                 <th width="50%">Price</th>
                                 <td width="50%" class="text-right">
-                                    $69,00 / person
+                                    ${{$item->price}},00 / person
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="join-container">
-                        <a href="{{route('checkout')}}" class="btn btn-block btn-join-now mt-3 py-2">
-                            Join Now
+                        @auth
+                            <form action="{{route('checkout_process', $item->id)}}" method="POST">
+                                @csrf
+                                <button class="btn btn-block btn-join-now mt-3 py-3">
+                                    Join Now
+                                </button>
+                            </form>
+                        @endauth
+                        @guest
+                        <a href="{{route('login')}}" class="btn btn-block btn-join-now mt-3 py-2">
+                            Login or Register to Join
                         </a>
+                        @endguest
+
                     </div>
 
                 </div>

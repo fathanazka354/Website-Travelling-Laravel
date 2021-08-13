@@ -18,7 +18,7 @@
             Moment you never see before
         </p>
 
-        <a href="" class="btn btn-get-started px-4 mt-4">
+        <a href="#popular" class="btn btn-get-started px-4 mt-4">
             Get started
         </a>
     </div>
@@ -50,69 +50,26 @@
         <p>Something can you visit</p>
         <p>only by one click</p>
     </section>
-    <div class="section-popular-content">
+    <div class="section-popular-content" id="popular">
         <div class="container">
             <div class="row details-wisata-popular justify-content-center">
+                @foreach($items as $item)
                 <div class="col-md-3 col-sm-6 d-flex justify-content-center ">
-                    <div class="card-travel text-center d-flex flex-column justify-content-center"
-                        style="background: url('/frontend/images/wisatapopular/bali.jpg') no-repeat; background-size: cover;">
+                    <div class="card-travel text-center d-flex flex-column"
+                        style="background: url('{{$item->galleries->count() ? Storage::url($item->galleries->first()->image) : ''  }}') no-repeat;">
 
                         <div class="travel-country">
-                            Indonesia
+                            {{$item->location}}
                         </div>
                         <div class="travel-tujuan">
-                            UBUD, Bali
+                            {{$item->title}}
                         </div>
                         <div class="button justify-content-center mt-auto">
-                            <a href="{{route('detail')}}" class="btn btn-card  px-3 ">Jump</a>
+                            <a href="{{route('detail',$item->slug)}}" class="btn btn-card  px-3 ">Jump</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 d-flex justify-content-center ">
-                    <div class="card-travel text-center d-flex flex-column justify-content-center"
-                        style="background: url('/frontend/images/wisatapopular/jepara.jpg') no-repeat; background-size: cover;">
-
-                        <div class="travel-country">
-                            Indonesia
-                        </div>
-                        <div class="travel-tujuan">
-                            Karimun Jawa
-                        </div>
-                        <div class="button justify-content-center mt-auto">
-                            <a href="{{route('detail')}}" class="btn btn-card  px-3 ">Jump</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 d-flex justify-content-center ">
-                    <div class="card-travel text-center d-flex flex-column justify-content-center"
-                        style="background: url('/frontend/images/wisatapopular/malioboro.jpg') no-repeat; background-size: cover;">
-
-                        <div class="travel-country">
-                            Indonesia
-                        </div>
-                        <div class="travel-tujuan">
-                            Malioboro, Yogyakarta
-                        </div>
-                        <div class="button justify-content-center mt-auto">
-                            <a href="{{route('detail')}}" class="btn btn-card  px-3 ">Jump</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 d-flex justify-content-center ">
-                    <div class="card-travel text-center d-flex flex-column justify-content-center"
-                        style="background: url('/frontend/images/wisatapopular/nusa\ penida.jpg') no-repeat; background-size: cover;">
-
-                        <div class="travel-country">
-                            Indonesia
-                        </div>
-                        <div class="travel-tujuan">
-                            Nusa Penida, Bali
-                        </div>
-                        <div class="button justify-content-center mt-auto">
-                            <a href="{{route('detail')}}" class="btn btn-card  px-3 ">Jump</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -219,27 +176,32 @@
                 </div>
             </div>
         </section>
-        <div class="row button-bawah">
+        <d class="row button-bawah">
             <div class="col-12 text-center">
                 <a href="" class="btn btn-need-help px-4 mt-4 mx-1">
                     I Need Help
                 </a>
-                <a class="btn btn-warning btn-get-started px-4 mt-4 mx-1" href="" style="color: #fff;">
+                <a class="btn btn-warning btn-get-started px-4 mt-4 mx-1" href="{{route('register')}}">
+
+                    Get Started
 
 
 
 
-
-
-
-
-
-           
-         Get Started
                 </a>
             </div>
-        </div>
+        </d iv>
     </div>
+
+
+
+
+
+
+
+
+
+
 
 </main>
 @endsection
